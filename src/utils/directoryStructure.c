@@ -23,7 +23,7 @@ int traverse(char *node, struct I_NODE *parent) {
     char fileName[nameLength];
     strcpy(fileName, temp + 1);
 
-    char *name = (char *)malloc(strlen(fileName));
+    char *name = (char *)malloc(strlen(fileName) + 1);
     strcpy(name, fileName);
     parent->files[parent->fileCount] = name;
     parent->fileCount++;
@@ -33,17 +33,17 @@ int traverse(char *node, struct I_NODE *parent) {
       exit(1);
     }
 
+    closedir(dir);
     return 1;
   }
 
-  struct I_NODE *directory = (struct I_NODE *)malloc(sizeof(struct I_NODE *));
+  struct I_NODE *directory = malloc(sizeof(struct I_NODE));
 
   char *temp = strrchr(node, '/');
   int nameLength = strlen(node) - (temp - node);
   char dirName[nameLength];
   strcpy(dirName, temp + 1);
 
-  directory->val = (char *)malloc(strlen(dirName) + 1);
   char *directoryName = (char *)malloc(strlen(dirName) + 1);
   strcpy(directoryName, dirName);
   directory->val = directoryName;
@@ -75,6 +75,7 @@ int traverse(char *node, struct I_NODE *parent) {
     }
   }
 
+  closedir(dir);
   return 0;
 }
 
@@ -84,7 +85,7 @@ struct I_NODE *getDirStructure() {
     return root;
   }
 
-  root = (struct I_NODE *)malloc(sizeof(struct I_NODE *));
+  root = malloc(sizeof(struct I_NODE));
 
   // No need to free heap memory allocated for storing nodes
   // while creating structure, because it is needed throught the
