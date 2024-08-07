@@ -4,6 +4,8 @@
 #define CONNECTION_THREAD_SIZE 1000
 #define IS_LOGGER 1
 
+#define DATA_DIRECTORY "data"
+
 struct I_CONSTANTS {
   char APPLICATION_NAME[10];
   int PORT;

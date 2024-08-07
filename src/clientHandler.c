@@ -1,4 +1,5 @@
 #include "clientHandler.h"
+#include "handlers/file/file.h"
 #include "handlers/health/health.h"
 #include "handlers/home/home.h"
 #include "handlers/unknown/unknown.h"
@@ -33,12 +34,23 @@ void *clientHandler(void *params) {
   logger(requestData.route);
 
   // Pass to handler //
-  if (strcmp(requestData.route, "/") == 0) {
-    // Serve Home
-    home(clientSocket);
-  } else if (strcmp(requestData.route, "/health") == 0) {
-    // Health Check
-    health(clientSocket);
+
+  // If path is valid : serve file //
+  // else : pass to next handler //
+  if (strcmp(requestData.method, "GET") == 0) {
+    if (strcmp(requestData.route, "/") == 0) {
+      // Serve Home
+      home(clientSocket);
+    } else if (strcmp(requestData.route, "/health") == 0) {
+      // Health Check
+      health(clientSocket);
+    } else if (isValidFilePath(requestData.route) == 0) {
+      // Serve File
+      serverFile(clientSocket, requestData.route);
+    } else {
+      // Hit on unknown route
+      unknown(clientSocket);
+    }
   } else {
     // Hit on unknown route
     unknown(clientSocket);
