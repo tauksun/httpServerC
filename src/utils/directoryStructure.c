@@ -95,6 +95,7 @@ struct I_NODE *getDirStructure() {
   strcpy(name, "root");
   root->val = name;
   root->fileCount = 0;
+  // TODO: Should be a linked list : instead of array #same for dirs#
   root->files = (char **)malloc(MAX_DEPTH * (sizeof(char *)));
   root->dirCount = 0;
   root->dirs = (struct I_NODE **)malloc(MAX_DEPTH * (sizeof(struct I_NODE *)));

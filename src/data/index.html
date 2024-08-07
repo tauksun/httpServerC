@@ -2,10 +2,64 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="icon" href="data:;base64,=" />
   <body>
-    <div>
-      <h1>Hello from Server Side \(^x^)/</h1>
+    <div id="parentDiv">
+      <p id="welcome">Welcome, Hello from C Server \(^_^)/</p>
+      <p id="description">
+        This is a simple page, showcasing basic functionalities like :
+      </p>
+      <div id="functionalitiesParent">
+        <p class="functionalities">- Importing scripts & images..</p>
+        <p class="functionalities">- Downloading files from server</p>
+        <p class="functionalities">- API call (check health)</p>
+      </div>
+
+      <div id="buttonParent">
+        <button onclick="hiAlert()" class="funcButton">Alert Me</button>
+        <button onclick="checkMyHealth()" class="funcButton">
+          Check my health
+        </button>
+        <p id="healthStatus"></p>
+      </div>
+
+      <div id="downloadParent">
+        <div class="downloadLinkParent">
+          <a download href="./assets/pdfs/hello-c.pdf" class="downloadLink"
+            >Download PDF</a
+          >
+        </div>
+        <div class="downloadLinkParent">
+          <a download href="./assets/excel/hello-c.docx" class="downloadLink"
+            >Download EXCEL</a
+          >
+        </div>
+      </div>
+      <div id="images">
+        <img
+          class="image"
+          src="./assets/animals/cats/cat.jpg"
+          width="400"
+          height="auto"
+        />
+        <hr />
+        <img
+          class="image"
+          src="./assets/animals/dogs/dog.jpg"
+          width="400"
+          height="auto"
+        />
+        <hr />
+        <img
+          class="image"
+          src="./assets/cars/car.jpg"
+          width="400"
+          height="auto"
+        />
+      </div>
     </div>
   </body>
+  <script src="./scripts/index.js" defer></script>
+  <script src="./scripts/second.js" defer></script>
 </html>

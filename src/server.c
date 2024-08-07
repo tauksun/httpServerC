@@ -57,7 +57,7 @@ int server() {
     // => don't accept connections : continue;
 
     if (canFetchFromQueue(&queue) != 0) {
-      // Event based
+      // TODO: Event based instead of sleeping #all threads are busy#
       sleep(1);
       continue;
     }

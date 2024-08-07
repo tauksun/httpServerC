@@ -1,0 +1,73 @@
+#body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#parentDiv {
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.funcButton {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: yellow;
+}
+
+#welcome,
+#description {
+  letter-spacing: 2px;
+}
+
+#welcome {
+  font-size: large;
+}
+
+.functionalities {
+  margin: 0.5rem;
+}
+
+#downloadParent,
+#buttonParent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#downloadParent {
+  margin: 0.5rem;
+}
+
+.downloadLink {
+  text-decoration: none;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: darksalmon;
+}
+
+.downloadLinkParent {
+  margin: 1rem;
+}
+
+.image {
+  border-radius: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #downloadParent,
+  #buttonParent {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 80%;
+    height: auto;
+  }
+}

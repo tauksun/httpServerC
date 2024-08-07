@@ -30,7 +30,7 @@ int isValidFilePath(char *path) {
         return 1;
       }
 
-      strcpy(tempName, "");
+      memset(tempName, 0, strlen(tempName));
       tempCount = 0;
     } else {
       if (i == strlen(path) - 1) {
