@@ -4,3 +4,4 @@
 2. Instead of using array to store files in directory,
    implement linked list, this will save space & will eliminate the need of MAX_DEPTH
 
+3.
