@@ -1,11 +1,12 @@
-# Make Executable
+# Run on Local
 
-gcc -o executable main.c server.c utils/logger.c utils/parser.c utils/queue.c handlers/health/health.c handlers/home/home.c handlers/unknown/unknown.c config/constants.c clientHandler.c handlers/file/file.c utils/directoryStructure.c
+    bash ./runOnLocal.sh
+    visit : localhost:5454
 
-# Run
+# Run as a container
 
-./executable
+    bash ./containerize.sh
 
 # Details
 
-Running port & number of threads are defined in constants
+    - Running port & number of threads are defined in constants
