@@ -1,5 +1,5 @@
-containerImage="http-server-c-image"
-containerName="http-server-c"
+containerImage="c-http-server"
+containerName="c-http-server"
 
 echo -e "\nCleaning previous build..."
 make clean
